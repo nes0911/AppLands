@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLands.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Login">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Login}">
+            <StackLayout
+                Padding="5">
+                <Label
+                    VerticalOptions="StartAndExpand"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    Text="AppLands">
+                </Label>
+
+                <Image
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    WidthRequest="140"
+                    Source="lands">                    
+                </Image>
+
+                <Grid
+                    Margin="10,0"
+                    VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        VerticalTextAlignment="Center"
+                        FontSize="Medium"
+                        Text="Email">                        
+                    </Label>
+                    <Entry                        
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Placeholder="Introduzca su email..."
+                        PlaceholderColor="LightGray"
+                        Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}">
+                    </Entry>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        VerticalTextAlignment="Center"
+                        FontSize="Medium"
+                        Text="Password">
+                    </Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Placeholder="Introduzca su password..."
+                        PlaceholderColor="LightGray"
+                        IsPassword="True"
+                        Text="{Binding Password, Mode=TwoWay}">
+                    </Entry>
+                </Grid>
+
+                <ActivityIndicator
+                    VerticalOptions="CenterAndExpand"
+                    Color="Blue"
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                </ActivityIndicator>
+
+                <StackLayout
+                    VerticalOptions="CenterAndExpand"
+                    Margin="10,0"
+                    Orientation="Horizontal">
+                    <Label                        
+                        FontAttributes="Italic"
+                        VerticalTextAlignment="Center"                        
+                        Text="Recordarme en este dispositivo...">                        
+                    </Label>
+                    <Switch
+                        IsToggled="{Binding IsRemenber, Mode=TwoWay}"
+                        HorizontalOptions="EndAndExpand">
+                    </Switch>                    
+                </StackLayout>
+
+                <Label
+                    VerticalOptions="CenterAndExpand"
+                    FontAttributes="Italic"
+                    TextColor="Blue"
+                    HorizontalTextAlignment="Center"
+                    Text="Olvido su Password?">                    
+                </Label>
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Button
+                        BackgroundColor="Navy"
+                        BorderRadius="25"                        
+                        HeightRequest="55"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="White"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Command="{Binding IngresarCommand}"
+                        Text=" Ingresar ">                        
+                    </Button>
+                    <Button
+                        BackgroundColor="MediumPurple"
+                        BorderRadius="25"                        
+                        HeightRequest="55"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="White"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Registrar">
+                    </Button>
+                </StackLayout>
+
+                <StackLayout                    
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center"
+                    VerticalOptions="EndAndExpand">
+                    
+                    <Image
+                        Source="logo_facebook"
+                        WidthRequest="50">                        
+                    </Image>
+
+                    <Image
+                        Source="logo_instagram"
+                        WidthRequest="50">
+                    </Image>
+
+                    <Image
+                        Source="logo_twitter"
+                        WidthRequest="50">
+                    </Image>
+                    
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>        
+    </ContentPage.Content>
+</ContentPage>
