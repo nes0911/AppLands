@@ -52,6 +52,9 @@
         {
             IsRemenber = true;
             IsEnabled = true;
+
+            this.Email = "nnegrin@gmail.com";
+            this.Password = "1234";
         }
         #endregion
 
