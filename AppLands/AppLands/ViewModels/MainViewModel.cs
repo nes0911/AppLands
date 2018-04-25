@@ -1,5 +1,8 @@
 ﻿namespace AppLands.ViewModels
 {
+    using Models;
+    using System.Collections.Generic;
+
     public class MainViewModel
     {
         #region Propiedades
@@ -8,6 +11,8 @@
         public LandsViewModel Lands { get; set; }
 
         public LandViewModel Land { get; set; }
+
+        public List<Land> LandsList { get; set; }
         #endregion
 
         #region Constructor
